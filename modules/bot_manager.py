@@ -18,10 +18,11 @@ class BotManager:
             parsed_text = message.text[1:]
             splitted_text = parsed_text.split(':')
             parsed_name, parsed_status = splitted_text[0][::-1].strip(), splitted_text[1][::-1].strip()
-            update_user_status(parsed_name, parsed_status, self.json_data)
+            update_user_status(parsed_name, parsed_status, message.from_user.id, self.json_data)
             group_reported, group_name = is_group_reported(parsed_name, self.json_data) 
             if group_reported:
-                self.bot.reply_to(message, "Group {0} was fully reported".format(group_name))
+                # self.bot.reply_to(message,  "Group {0} was fully reported".format(group_name))
+                self.bot.send_message(get_leader_telegram_id(group_name, self.json_data), "Group {0} was fully reported".format(group_name))
 
     def poll(self):
         self.bot.polling()

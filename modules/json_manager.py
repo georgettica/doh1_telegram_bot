@@ -9,7 +9,7 @@ database_path = "assets/database.json"
 
 def dump(json_data):
     with open(database_path,'w') as f:
-        json.dump(json_data, f)
+        json.dump(json_data, f, ensure_ascii=False)
 
 
 def read_users_and_groups():
@@ -32,20 +32,25 @@ def map_name_to_group(json_data):
             name_to_group[person[::-1]] = group[::-1]
 
 
-def update_user_status(user, status, json_data):
+def update_user_status(user, status, user_telegram_id, json_data):
     global groups_counters
     if user not in name_to_group.keys():
         raise IndexError
     # TODO: validate status
     group_name = name_to_group[user]
-    if json_data[group_name[::-1]][user[::-1]]['status'] == "":
+    parsed_group_name = group_name[::-1]
+    parsed_user_name = user[::-1]
+    user = json_data[parsed_group_name][parsed_user_name]
+    if 'is_leader' in user:
+        user["telegram_id"] = user_telegram_id
+    if user['status'] == "":
         groups_counters[group_name] += 1
-    json_data[group_name[::-1]][user[::-1]]['status'] = status
+    user['status'] = status
     dump(json_data)
 
 def is_group_reported(user, json_data):
     group_name = name_to_group[user]
-    return groups_counters[group_name] == len(json_data[group_name[::-1]]), group_name
+    return groups_counters[group_name] == len(json_data[group_name[::-1]]), group_name[::-1]
 
 
 def clear_statuses(json_data):
@@ -53,4 +58,9 @@ def clear_statuses(json_data):
         for person, _ in people.items():
             json_data[group][person]['status'] = ""
     dump(json_data)
-        
+
+
+def get_leader_telegram_id(group_name, json_data):
+    for person in json_data[group_name].values():
+        if "is_leader" in person:
+            return person["telegram_id"]
