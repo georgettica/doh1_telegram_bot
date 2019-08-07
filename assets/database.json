@@ -1,60 +1,32 @@
-[
-    {
-    "name": "טבחים",
-		"people":
-		[
-     {
-       "name": "יונתן שולחני",
-       "status": "בעמדה",
-       "is_leader": true
-     },
-     {
-     "name": "אריה שמעוני",
-       "status": "בסיפון"
-     },
-     {
-     "name": "אפריים מילסון",
-       "status": ""
-     }
-		]
-		}
-   ,
-   {
-     "name": "אורחים",
-		 "people":
-		 [
-      {
-      "name": "זיו שמילרמן",
-        "status": "בסיפון"
-      },
-      {
-        "name": "יואב שי",
-        "status": "במטבח",
-        "is_leader": "true"
-      },
-      {
-        "name": "איגור גרגור",
-        "status": ""
-      }
-		 ]
-   },
-   {
-     "name": "מלצרים",
-		 "people":
-		 [
-      {
-      "name": "גיורא זינגר",
-        "status": "בשירותים"
-      },
-      {
-      "name": "יעקב לוי",
-         "status": "בעמדה"
-      },
-      {
-      "name": "אסף לברטוב",
-         "status": "",
-         "is_leader": "true"
-      }
-		 ]
-   }
-]
+{
+  "\u05d8\u05d1\u05d7\u05d9\u05dd": {
+    "\u05d9\u05d5\u05e0\u05ea\u05df \u05e9\u05d5\u05dc\u05d7\u05e0\u05d9": "\u05d4\u05d3\u05d9\u05d7\u05d9\u05d1",
+    "\u05d0\u05e8\u05d9\u05d4 \u05e9\u05de\u05e2\u05d5\u05e0\u05d9": {
+      "status": ""
+    }
+  },
+  "\u05d0\u05d5\u05e8\u05d7\u05d9\u05dd": {
+    "\u05d6\u05d9\u05d5 \u05e9\u05de\u05d9\u05dc\u05e8\u05de\u05df": {
+      "status": ""
+    },
+    "\u05d9\u05d5\u05d0\u05d1 \u05e9\u05d9": {
+      "status": "",
+      "is_leader": "true"
+    },
+    "\u05d0\u05d9\u05d2\u05d5\u05e8 \u05d2\u05e8\u05d2\u05d5\u05e8": {
+      "status": ""
+    }
+  },
+  "\u05de\u05dc\u05e6\u05e8\u05d9\u05dd": {
+    "\u05d2\u05d9\u05d5\u05e8\u05d0 \u05d6\u05d9\u05e0\u05d2\u05e8": {
+      "status": ""
+    },
+    "\u05d9\u05e2\u05e7\u05d1 \u05dc\u05d5\u05d9": {
+      "status": ""
+    },
+    "\u05d0\u05e1\u05e3 \u05dc\u05d1\u05e8\u05d8\u05d5\u05d1": {
+      "status": "",
+      "is_leader": "true"
+    }
+  }
+}
