@@ -1,12 +1,49 @@
-{
-  "group1": {
-    "name1": {
-      "status": "ביחידה",
-      "is_leader": true
-    },
-    "name2":{
-      "status": "מחוץ ליחידה",
-      "is_leader": false
-    }
-  }
-}
+[{
+    {
+    "name": "cooks",
+     {
+       "name": "john the baker",
+       "status": "בעמדה",
+       "is_leader": true
+     },
+     {
+     "name": "aria the crisper",
+       "status": "בסיפון"
+     },
+     {
+     "name": "frodo the fryer",
+       "status": ""
+     }
+   },
+   {
+     "name": "guests":,
+      {
+      "name": "zimmer the bored":,
+        "status": "בסיפון"
+      },
+      {
+      "name": "yohan the overseer":,
+         "status": "במטבח",
+         "is_leader": "true"
+      },
+      {
+      "name": "igor the luitenent":
+      }
+   },
+   {
+     "name": "waiters",
+      {
+      "name": "sandy the clumsy":,
+        "status": "בשירותים"
+      },
+      {
+      "name": "candy the forgetfull":,
+         "status": "בעמדה"
+      },
+      {
+      "name": "Nimrod the religious":,
+         "status": "",
+         "is_leader": "true"
+      }
+   }
+}]
