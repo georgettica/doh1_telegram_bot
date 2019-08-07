@@ -69,3 +69,23 @@ def get_leader_telegram_id(group_name, json_data):
     for person in json_data[group_name].values():
         if "is_leader" in person:
             return person["telegram_id"]
+
+
+def get_unreported(json_data):
+    unreported = []
+    for group in json_data.values():
+        for person_name, person in group.items():
+            if person["status"] == "":
+                unreported.append(person_name)
+    return unreported
+
+
+def display_unreported(json_data):
+    unreported = get_unreported(json_data)
+    return "The following people have not reported yet:\n" + "\n".join(unreported)
+
+
+def get_percentage_of_unreported(json_data):
+    total = len(name_to_group)
+    reported_amount = total - len(get_unreported(json_data))
+    return  "Until now {0}% of the people have reported the status.". format(100*float(reported_amount)/total)
