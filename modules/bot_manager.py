@@ -1,8 +1,8 @@
 import telebot
 from modules.json_manager import *
-from pprint import pprint
 from modules.exceptions.no_username import NoUsername
 from modules.exceptions.unknown_status import UnknownStatus
+
 
 class BotManager:
 
@@ -29,11 +29,8 @@ class BotManager:
 
             group_reported, group_name = is_group_reported(parsed_name, self.json_data) 
             if group_reported:
-                # self.bot.reply_to(message,  "Group {0} was fully reported".format(group_name))
-                self.bot.send_message(get_leader_telegram_id(group_name, self.json_data), "Group {0} was fully reported".format(group_name))
+                self.bot.send_message(get_leader_telegram_id(group_name, self.json_data),
+                "Group {0} was fully reported".format(group_name))
 
     def poll(self):
         self.bot.polling()
-
-    
-    
