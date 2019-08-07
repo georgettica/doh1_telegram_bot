@@ -1,13 +1,14 @@
 import json
-from pprint import pprint
 from modules.constants import on_board_statuses, off_board_statuses
 from modules.exceptions.no_username import NoUsername
 from modules.exceptions.unknown_status import UnknownStatus
+import os
+from pathlib import Path
 
 name_to_group = {}
 groups_counters = {}
 
-database_path = "assets/database.json"
+database_path = os.path.join(Path(os.path.dirname(__file__)).parent, 'assets/database.json')
 
 
 def dump(json_data):
@@ -37,11 +38,6 @@ def map_name_to_group(json_data):
 
 def update_user_status(user, status, user_telegram_id, json_data):
     global groups_counters
-    print("USER::",user)
-    print("STATUS::",status)
-    print("ON,OFF::",on_board_statuses,off_board_statuses)
-    print("IS_ON::",status not in on_board_statuses)
-    print("IS_OFF::",status not in off_board_statuses)
     if user not in name_to_group.keys():
         raise NoUsername
     if status not in on_board_statuses and status not in off_board_statuses:
