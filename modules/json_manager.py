@@ -1,5 +1,6 @@
 import json
 from pprint import pprint
+from modules.constants import on_board_statuses, off_board_statuses
 
 name_to_group = {}
 groups_counters = {}
@@ -36,7 +37,8 @@ def update_user_status(user, status, user_telegram_id, json_data):
     global groups_counters
     if user not in name_to_group.keys():
         raise IndexError
-    # TODO: validate status
+    if status not in on_board_statuses or status not in off_board_statuses:
+        raise ValueError
     group_name = name_to_group[user]
     parsed_group_name = group_name[::-1]
     parsed_user_name = user[::-1]
