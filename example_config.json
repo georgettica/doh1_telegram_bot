@@ -1,47 +1,48 @@
 [{
     {
-    "name": "cooks",
+    "name": "טבחים",
      {
-       "name": "john the baker",
+       "name": "יונתן שולחני",
        "status": "בעמדה",
        "is_leader": true
      },
      {
-     "name": "aria the crisper",
+     "name": "אריה שמעוני",
        "status": "בסיפון"
      },
      {
-     "name": "frodo the fryer",
+     "name": "אפריים מילסון",
        "status": ""
      }
    },
    {
-     "name": "guests",
+     "name": "אורחים",
       {
-      "name": "zimmer the bored",
+      "name": "זיו שמילרמן",
         "status": "בסיפון"
       },
       {
-      "name": "yohan the overseer",
-         "status": "במטבח",
-         "is_leader": "true"
+        "name": "יואב שי",
+        "status": "במטבח",
+        "is_leader": "true"
       },
       {
-      "name": "igor the luitenent"
+        "name": "איגור גרגור",
+        "status": ""
       }
    },
    {
-     "name": "waiters",
+     "name": "מלצרים",
       {
-      "name": "sandy the clumsy",
+      "name": "גיורא זינגר",
         "status": "בשירותים"
       },
       {
-      "name": "candy the forgetfull",
+      "name": "יעקב לוי",
          "status": "בעמדה"
       },
       {
-      "name": "Nimrod the religious",
+      "name": "אסף לברטוב",
          "status": "",
          "is_leader": "true"
       }
