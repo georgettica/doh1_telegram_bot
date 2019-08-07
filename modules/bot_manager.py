@@ -1,6 +1,8 @@
 import telebot
 from modules.json_manager import *
 from pprint import pprint
+from modules.exceptions.no_username import NoUsername
+from modules.exceptions.unknown_status import UnknownStatus
 
 class BotManager:
 
@@ -18,7 +20,13 @@ class BotManager:
             parsed_text = message.text[1:]
             splitted_text = parsed_text.split(':')
             parsed_name, parsed_status = splitted_text[0][::-1].strip(), splitted_text[1][::-1].strip()
-            update_user_status(parsed_name, parsed_status, message.from_user.id, self.json_data)
+            try:
+                update_user_status(parsed_name, parsed_status, message.from_user.id, self.json_data)
+            except NoUsername:
+                self.bot.send_message(message.from_user.id, "Invalid name {}, not in database".format(parsed_name))
+            except UnknownStatus:
+                self.bot.send_message(message.from_user.id, "Invalid status {}".format(parsed_status))
+
             group_reported, group_name = is_group_reported(parsed_name, self.json_data) 
             if group_reported:
                 # self.bot.reply_to(message,  "Group {0} was fully reported".format(group_name))
