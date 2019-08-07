@@ -8,7 +8,7 @@ database_path = "assets/database.json"
 
 
 def dump(json_data):
-    with open(database_path,'w',encoding='UTF-8') as f:
+    with open(database_path,'w') as f:
         json.dump(json_data, f)
 
 
@@ -22,7 +22,7 @@ def initialize(json_data):
     for group in json_data.keys(): 
         groups_counters[group[::-1]] = 0
     map_name_to_group(json_data)
-    dump(json_data)
+    clear_statuses(json_data)
 
 
 def map_name_to_group(json_data):
@@ -33,16 +33,14 @@ def map_name_to_group(json_data):
 
 
 def update_user_status(user, status, json_data):
-    print("USER::", user)
-    print("KEYS::", name_to_group.keys())
     global groups_counters
     if user not in name_to_group.keys():
         raise IndexError
     # TODO: validate status
     group_name = name_to_group[user]
-    if json_data[group_name[::-1]][user[::-1]] == "":
+    if json_data[group_name[::-1]][user[::-1]]['status'] == "":
         groups_counters[group_name] += 1
-    json_data[group_name[::-1]][user[::-1]] = status
+    json_data[group_name[::-1]][user[::-1]]['status'] = status
     dump(json_data)
 
 def is_group_reported(user, json_data):

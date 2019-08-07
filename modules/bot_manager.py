@@ -21,7 +21,7 @@ class BotManager:
             update_user_status(parsed_name, parsed_status, self.json_data)
             group_reported, group_name = is_group_reported(parsed_name, self.json_data) 
             if group_reported:
-                self.bot.reply_to("Group {0} was fully reported".format(group_name))
+                self.bot.reply_to(message, "Group {0} was fully reported".format(group_name))
 
     def poll(self):
         self.bot.polling()
