@@ -94,7 +94,6 @@ def initialize_group_counter(json):
 def main():
     json_string = read_users_and_groups()
     group_counters = initialize_group_counter(json_string)
-    print(group_counters)
 
 if __name__ == '__main__':
    main() 
