@@ -16,32 +16,32 @@
      }
    },
    {
-     "name": "guests":,
+     "name": "guests",
       {
-      "name": "zimmer the bored":,
+      "name": "zimmer the bored",
         "status": "בסיפון"
       },
       {
-      "name": "yohan the overseer":,
+      "name": "yohan the overseer",
          "status": "במטבח",
          "is_leader": "true"
       },
       {
-      "name": "igor the luitenent":
+      "name": "igor the luitenent"
       }
    },
    {
      "name": "waiters",
       {
-      "name": "sandy the clumsy":,
+      "name": "sandy the clumsy",
         "status": "בשירותים"
       },
       {
-      "name": "candy the forgetfull":,
+      "name": "candy the forgetfull",
          "status": "בעמדה"
       },
       {
-      "name": "Nimrod the religious":,
+      "name": "Nimrod the religious",
          "status": "",
          "is_leader": "true"
       }
