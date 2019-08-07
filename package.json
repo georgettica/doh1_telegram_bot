@@ -1,0 +1,19 @@
+{
+  "name": "doh1_telegram_bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/georgettica/doh1_telegram_bot.git"
+  },
+  "author": "georgettica",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/georgettica/doh1_telegram_bot/issues"
+  },
+  "homepage": "https://github.com/georgettica/doh1_telegram_bot#readme"
+}
