@@ -1,0 +1,12 @@
+{
+  "group1": {
+    "name1": {
+      "status": "ביחידה",
+      "is_leader": true
+    },
+    "name2":{
+      "status": "מחוץ ליחידה",
+      "is_leader": false
+    }
+  }
+}
