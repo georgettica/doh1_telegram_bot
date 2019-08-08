@@ -53,6 +53,7 @@ def update_user_status(user, status, user_telegram_id, json_data):
     user['status'] = status
     dump(json_data)
 
+
 def is_group_reported(user, json_data):
     group_name = name_to_group[user]
     return groups_counters[group_name] == len(json_data[group_name[::-1]]), group_name[::-1]
@@ -83,6 +84,11 @@ def get_unreported(json_data):
 def display_unreported(json_data):
     unreported = get_unreported(json_data)
     return "The following people have not reported yet:\n" + "\n".join(unreported)
+
+
+def ask_for_report(json_data):
+    unreported = get_unreported(json_data)
+    return "The following please report now:\n" + "\n".join(unreported)
 
 
 def get_percentage_of_unreported(json_data):
